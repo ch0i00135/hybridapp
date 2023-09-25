@@ -23,7 +23,9 @@
         </div>
 
         <div id="area3">
-            <p id="text"></p>
+            <p id="text1"></p>
+            <p id="text2"></p>
+            <p id="text3"></p>
         </div>
     </div>
 
@@ -35,32 +37,50 @@
         const button1 = document.getElementById("button1");
         const button2 = document.getElementById("button2");
         const button3 = document.getElementById("button3");
-        const textArea = document.getElementById("text");
+        const text1 = document.getElementById("text1");
+        const text2 = document.getElementById("text2");
+        const text3 = document.getElementById("text3");
         const profile=document.getElementById("profile");
         const saveText = "저장되었습니다.";
         const notText = "내용이 없습니다.";
-        var btntext =["버튼1의 내용","버튼2의 내용",""];
+        var btnText =[text1, text2, text3];
+        var btnNumberText=["버튼1의 내용","버튼2의 내용",""];
         var lastBtn = 2;
         var loggedIn = false;
         var stolenContent = "";
 
+        function swap(a, b){
+            let temp=a;
+            a=b;
+            b=temp;
+        }
 
         function btnClick(btnNumber){
-            if(btntext[btnNumber]==""){
-                if(textArea.textContent!=saveText&&textArea.textContent!=notText){
-                    btntext[btnNumber]=textArea.textContent;
-                    btntext[lastBtn]="";
-                    textArea.textContent = saveText;
-                    console.log("버튼"+(btnNumber+1)+"에 저장");
-                } else {
-                    textArea.textContent=notText;
-                    console.log("버튼"+(btnNumber+1)+"에 저장 실패")
-                }
+            btnText[lastBtn].style.display="none";
+            if(btnText[btnNumber].style.display=="none") {
+                btnText[btnNumber].style.display="block";
             }
-            else {
-                textArea.textContent = btntext[btnNumber];                
-                console.log("버튼"+(btnNumber+1)+" 내용 출력");
+            if(btnText[btnNumber].textContent=="") {
+                swap
             }
+
+
+
+            // if(btntext[btnNumber]==""){
+            //     if(textArea.textContent!=saveText&&textArea.textContent!=notText){
+            //         btntext[btnNumber]=textArea.textContent;
+            //         btntext[lastBtn]="";
+            //         textArea.textContent = saveText;
+            //         //console.log("버튼"+(btnNumber+1)+"에 저장");
+            //     } else {
+            //         textArea.textContent=notText;
+            //         //console.log("버튼"+(btnNumber+1)+"에 저장 실패")
+            //     }
+            // }
+            // else {
+            //     textArea.textContent = btntext[btnNumber];                
+            //     //console.log("버튼"+(btnNumber+1)+" 내용 출력");
+            // }
             lastBtn=btnNumber;
         }
 
