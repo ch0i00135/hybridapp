@@ -36,14 +36,14 @@
         const button2 = document.getElementById("button2");
         const button3 = document.getElementById("button3");
         const textArea = document.getElementById("text");
+        const profile=document.getElementById("profile");
         const saveText = "저장되었습니다.";
         const notText = "내용이 없습니다.";
         var btntext =["버튼1의 내용","버튼2의 내용",""];
         var lastBtn = 2;
-        const profile=document.getElementById("profile");
+        var loggedIn = false;
+        var stolenContent = "";
 
-        let loggedIn = false;
-        let stolenContent = "";
 
         function btnClick(btnNumber){
             if(btntext[btnNumber]==""){
@@ -95,15 +95,27 @@
         });
         
         button1.addEventListener("click", () => {
-            btnClick(0);
+            if(loggedIn) btnClick(0);
+            else {
+                subText.textContent="로그인을 해주세요.";
+                subText.style.display = "block";                
+            }
         });
 
         button2.addEventListener("click", () => {
-            btnClick(1);
+            if(loggedIn) btnClick(1);
+            else {
+                subText.textContent="로그인을 해주세요.";
+                subText.style.display = "block";                
+            }
         });
 
         button3.addEventListener("click", () => {     
-            btnClick(2);
+            if(loggedIn) btnClick(2);
+            else {
+                subText.textContent="로그인을 해주세요.";
+                subText.style.display = "block";                
+            }
         });
         
     </script>
