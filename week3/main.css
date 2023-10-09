@@ -1,0 +1,40 @@
+#area1 {
+    border: 1px solid gray;
+    width: 300px;
+    height: 80px;
+    box-sizing: border-box;
+    background-color:aquamarine;
+}
+#area2{
+    border: 1px solid gray;
+    width: 60px;
+    height: 200px;
+    box-sizing: border-box;
+    float: left;
+    background-color: azure;
+}
+#area3{
+    border: 1px solid gray;
+    width: 240px;
+    height: 200px;
+    box-sizing: border-box;
+    float: left;
+    background-color: antiquewhite;
+}
+#parent{
+    text-align: center;
+}
+#username{
+    width: 150px;
+}
+#profile{
+    float: left;
+    width: 70px;
+    height: 70px;
+    display: none;
+}
+#loginButton{
+    float: right;
+    width: 30%;
+    height: 100%;
+}
