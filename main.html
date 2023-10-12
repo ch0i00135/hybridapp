@@ -38,12 +38,11 @@
         const textArea = document.getElementById("text");
         const saveText = "저장되었습니다.";
         const notText = "내용이 없습니다.";
-        var btntext =["버튼1에 있던 내용","버튼2에 있던 내용",""];
+        var btntext =["버튼1의 내용","버튼2의 내용",""];
         var lastBtn = 2;
         const profile=document.getElementById("profile");
 
-        let loggedIn = false;
-        let stolenContent = "";
+        var loggedIn = false;
 
         function btnClick(btnNumber){
             if(btntext[btnNumber]==""){
